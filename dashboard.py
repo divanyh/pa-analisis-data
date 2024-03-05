@@ -5,9 +5,9 @@ import streamlit as st
 from babel.numbers import format_currency
 
 df_aqi = pd.concat(
-    map(pd.read_csv, ['../main/Aotizhongxin.csv', '../main/Changping.csv', '../main/Dingling.csv', '../main/Dongsi.csv',
-                      '../main/Guanyuan.csv', '../main/Gucheng.csv', '../main/Huairou.csv', '../main/Nongzhanguan.csv',
-                      '../main/Shunyi.csv', '../main/Tiantan.csv', '../main/Wanliu.csv', '../main/Wanshouxigong.csv']), ignore_index=True)
+    map(pd.read_csv, ['../database/Aotizhongxin.csv', '../database/Changping.csv', '../database/Dingling.csv', '../database/Dongsi.csv',
+                      '../database/Guanyuan.csv', '../database/Gucheng.csv', '../database/Huairou.csv', '../database/Nongzhanguan.csv',
+                      '../database/Shunyi.csv', '../database/Tiantan.csv', '../database/Wanliu.csv', '../database/Wanshouxigong.csv']), ignore_index=True)
 
 df_date = pd.to_datetime(df_aqi[['year', 'month', 'day']])
 df_aqi.insert(6, "date", df_date, True)
